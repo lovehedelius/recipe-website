@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Users are encouraged to fill in a contact form if they have found problems 
+        or have any opinions about Thought For Food.">
+        <link href="../css/reset.css" rel="stylesheet">
+        <link href="../css/main.css" rel="stylesheet">
+        <title>Contact – Thought For Food</title>
+    </head>
+
+    <body>
+        <header>
+            <h1><a href="../index.html">Thought For Food</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Random</a></li>
+                    <li><a href="saved.html">Saved</a></li>
+                    <li class="active"><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="contact">
+            <h2>Contact</h2>
+
+            <p>Have you found a bug or do you have a suggestion for the website? Don't hesitate to get in touch!</p>
+
+            <form>
+                <label for="first-name" class="required">First Name:</label>
+                <input type="text" name="firstname" id="first-name" required>
+
+                <label for="last-name" class="required">Last Name:</label>
+                <input type="text" name="lastname" id="last-name" required>
+
+                <label for="email" class="required">Email:</label>
+                <input type="email" name="email" id="email" required pattern="\w+@\w+.+\w">
+
+                <label for="topic">Reason for Contacting:</label>
+                <select name="topic" id="topic">
+                    <option value="" selected hidden>Select an option</option>
+                    <option value="bug">Bug Report</option>
+                    <option value="recipe">Feature Suggestion</option>
+                    <option value="recipe">Recipe Feedback</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label for="message" class="required">Message:</label>
+                <textarea name="message" id="message" rows="5" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </main>
+    </body>
+
+</html>

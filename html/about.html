@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Thought For Food is developed as a course project and its purpose is
+        to help people with cooking inspiration. It uses the Tasty API and might get more features soon.">
+        <link href="../css/reset.css" rel="stylesheet">
+        <link href="../css/main.css" rel="stylesheet">
+        <title>About – Thought For Food</title>
+    </head>
+
+    <body>
+        <header>
+            <h1><a href="../index.html">Thought For Food</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Random</a></li>
+                    <li><a href="saved.html">Saved</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="active"><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="about">
+            <h2>About Thought For Food</h2>
+
+            <section>
+                <h3>What is Thought For Food?</h3>
+
+                <p>Thought For Food is the result of a project in the course Dynamiska webbapplikationer at Uppsala 
+                    University during the summer of 2025. The purpose of the site is to give users cooking inspiration 
+                    when yet another meal has to be made. By going to the site and simply clicking the button on the 
+                    home page you can instantly get a suggestion on what to make. You also get information about the 
+                    approximate time it will take, the number of ingredients and the rating from people who have tried 
+                    it, as well as a description and a picture of the dish. If you want vegetarian or vegan recipes you 
+                    can choose to only randomise from those. Keep clicking the button until you find a recipe that looks 
+                    good, and then click the recipe itself to see the ingredient list and the instructions.
+                </p>
+
+                <p>If you find a recipe you like but want to make another day, or you want to make sure you don't lose 
+                    the one you have found before you are finished cooking, you can save it using a button. This is 
+                    possible both from the overview on the home page and from the detailed recipe page. However, since 
+                    the site is developed under the restrictions of the course project, the saved recipes are currently
+                    not displayed under the Saved tab. They are nevertheless stored, and can be accessed by the user through
+                    the console if desired.</p>
+            </section>
+
+            <section>
+                <h3>How it Works</h3>
+
+                <p>All recipes and the information about them are fetched retrieved from <a href="https://tasty.co/">tasty.co</a>, 
+                    with the <a href="https://rapidapi.com/apidojo/api/tasty">Tasty API</a> available through 
+                    <a href="https://rapidapi.com/">RapidAPI</a>. The free subscription plan used for Thought For Food has a 
+                    500 requests/month limit. There are therefore 40 pre-fetched recipes stored in one of the project files 
+                    which can be used during testing or if the limit is reached, and also if the API becomes unavailable for 
+                    other reasons. When using this database however, the filtering buttons have no effect.</p>
+
+                <p>When the home page is loaded, a single request to the API is made to check the total number of available 
+                    recipes. This is done to make sure all recipes can be reached and no nonexistent recipes are requested, 
+                    since the number can change. A request is also made when the filter buttons are clicked, in order to check
+                    the number of recipes satisfying the selected restriction. When the New Recipe button is clicked, a new 
+                    request is made and a random recipe is picked. The contents of the recipe card are dynamically created 
+                    with the information from the API and the data is also stored in sessionStorage. The recipe item is 
+                    overwritten each time, and thus sessionStorage always contains the latest randomised recipe.</p>
+
+                <p>Since the entire recipe card is a link, a click on it takes to user to the page for detailed recipes, and 
+                    when that upon loading that page retrieves the recipe data from sessionStorage. Similarly to the recipe card, 
+                    the page is then filled dynamically with the information about the recipe.</p>
+
+                <p>The recipe card and the detailed recipe page both have buttons with which the current recipe is saved and 
+                    unsaved. The saved recipes are stored in localStorage so that they are persistent across sessions but specific 
+                    for each user. When the buttons are clicked, localStorage is checked to see if the recipe is already stored 
+                    or not. The entire string of saved recipes is then retrieved from localStorage and converted to an array, 
+                    the relevant recipe is added or removed from the array and the modified array is converted back to a string 
+                    and sent to localStorage to replace the old item. If dynamic content had been allowed on more pages, the table 
+                    on the Saved page would be filled by retrieving the saved recipes from localStorage and looping through them.</p>
+            </section>
+
+            <section>
+                <h3>The Future of Thought For Food</h3>
+
+                <p>There are several ways in which the functionality of the site could be extended. The most obvious is to implement
+                    the saving feature fully, so that the saved recipes are displayed on the Saved page. Another potential improvement 
+                    is to allow filtering based on more criteria then the recipes being vegetarian or vegan. The Tasty API provides a 
+                    list of tags for each recipe, and this could be used to for example only get dishes that originate from a certain 
+                    cuisine or that take less than a given amount of time to make. It would also be useful to be able to choose ingredients 
+                    that the recipes should contain or find ones that are similar to some other recipe: features which are both supported 
+                    by the API.</p>
+
+                <p>Keep an eye out – Thought For Food might get even better soon!</p>
+            </section>
+
+            <section>
+                <h3>About the Developer</h3>
+
+                <picture>
+                    <source srcset="../images/lovehedelius_small.jpg 1x, ../images/lovehedelius_medium.jpg 2x" media="(max-width: 425px)">
+                    <source srcset="../images/lovehedelius_medium.jpg 1x, ../images/lovehedelius_large.jpg 2x" media="(min-width: 426px)">
+                    <img src="../images/lovehedelius_large.jpg" alt="Love Hedelius, the devoloper of Thought For Food" height="1200">
+                </picture>
+
+                <p>Love Hedelius is an engineering student at Lund University, graduating in 2026. With a background in mostly Java and 
+                    Python, he has taken the course Dynamiska webbapplikationer both out of interest and to broaden his programming 
+                    knowledge. He thinks it's very difficult to come up with ideas for what to cook every day.</p>
+            </section>
+        </main>
+    </body>
+
+</html>

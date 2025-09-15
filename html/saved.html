@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="In a fully implemented version, users can see their saved recipes here.
+        At the moment the page shows a static example of saved recipes.">
+        <link href="../css/reset.css" rel="stylesheet">
+        <link href="../css/main.css" rel="stylesheet">
+        <title>Saved Recipes – Thought For Food</title>
+    </head>
+
+    <body>
+        <header>
+            <h1><a href="../index.html">Thought For Food</a></h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Random</a></li>
+                    <li class="active"><a href="saved.html">Saved</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="saved-recipes">
+            <h2>Saved Recipes</h2>
+
+            <aside>
+                <h3>More functionality coming soon!</h3>
+                <p>Thought For Food is developed as part of the course Dynamiska Webbapplikationer at Uppsala University. 
+                    Because of the restrictions on the project, the contents of this page can't be added dynamically 
+                    with JavaScript. Your saved recipes can therefore not be displayed here. Instead, an example of how 
+                    the page might look when fully implemented is shown below, with a static list of recipes rather than 
+                    your actual saved ones. In the fully functional version, the recipe names will be clickable and take 
+                    you to their detailed page. It will also be possible to click the heart shaped buttons to unsave recipes 
+                    you no longer want saved, which will make them not appear the next time the page is opened.</p>
+            </aside>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th id="unsave"></th>
+                        <th id="name">Name</th>
+                        <th id="time">Time</th>
+                        <th id="ingredients">Ingredients</th>
+                        <th id="rating">Rating</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td headers="unsave"><button class="save saved"></button></td>
+                        <td headers="name"><a href="#">Grilled Shrimp Tacos With Creamy Cilantro Sauce</a></td>
+                        <td headers="time"><span class="time-info">26 min</span></td>
+                        <td headers="ingredients"><span class="ingredients-info">20</span></td>
+                        <td headers="rating"><span class="rating-info">97%</span></td>
+                    </tr>
+                    <tr>
+                        <td headers="unsave"><button class="save saved"></button></td>
+                        <td headers="name"><a href="#">20-Minute Beef And Broccoli Noodle Stir-Fry</a></td>
+                        <td headers="time"><span class="time-info">20 min</span></td>
+                        <td headers="ingredients"><span class="ingredients-info">14</span></td>
+                        <td headers="rating"><span class="rating-info">92%</span></td>
+                    </tr>
+                    <tr>
+                        <td headers="unsave"><button class="save saved"></button></td>
+                        <td headers="name"><a href="#">Creamy Chicken Piccata</a></td>
+                        <td headers="time"><span class="time-info">30 min</span></td>
+                        <td headers="ingredients"><span class="ingredients-info">14</span></td>
+                        <td headers="rating"><span class="rating-info">97%</span></td>
+                    </tr>
+                    <tr>
+                        <td headers="unsave"><button class="save saved"></button></td>
+                        <td headers="name"><a href="#">Weekday Meal-Prep Pesto Chicken & Veggies</a></td>
+                        <td headers="time"><span class="time-info">22 min</span></td>
+                        <td headers="ingredients"><span class="ingredients-info">7</span></td>
+                        <td headers="rating"><span class="rating-info">97%</span></td>
+                    </tr>
+                    <tr>
+                        <td headers="unsave"><button class="save saved"></button></td>
+                        <td headers="name"><a href="#">One-Pot Taco Spaghetti</a></td>
+                        <td headers="time"><span class="time-info">30 min</span></td>
+                        <td headers="ingredients"><span class="ingredients-info">12</span></td>
+                        <td headers="rating"><span class="rating-info">94%</span></td>
+                    </tr>
+                    <tr>
+                        <td headers="unsave"><button class="save saved"></button></td>
+                        <td headers="name"><a href="#">Veggie Garlic Noodles</a></td>
+                        <td headers="time"><span class="time-info">25 min</span></td>
+                        <td headers="ingredients"><span class="ingredients-info">8</span></td>
+                        <td headers="rating"><span class="rating-info">95%</span></td>
+                    </tr>
+                    <tr>
+                        <td headers="unsave"><button class="save saved"></button></td>
+                        <td headers="name"><a href="#">3-Ingredient Teriyaki Chicken</a></td>
+                        <td headers="time"><span class="time-info">30 min</span></td>
+                        <td headers="ingredients"><span class="ingredients-info">3</span></td>
+                        <td headers="rating"> <span class="rating-info">90%</span></td>
+                    </tr>
+                    <tr>
+                        <td headers="unsave"><button class="save saved"></button></td>
+                        <td headers="name"><a href="#">Lemon Chicken And Asparagus Stir-Fry</a></td>
+                        <td headers="time"><span class="time-info">25 min</span></td>
+                        <td headers="ingredients"><span class="ingredients-info">10</span></td>
+                        <td headers="rating"><span class="rating-info">97%</span></td>
+                    </tr>
+                </tbody>
+            </table>       
+
+        </main>
+        
+    </body>
+
+</html>
