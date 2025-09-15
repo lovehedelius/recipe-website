@@ -1,0 +1,765 @@
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
+
+@font-face {
+    font-family: "Bodoni Moda";
+    src: url(fonts/Bodoni_Moda/static/BodoniModa_18pt-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Inter";
+    src: url(fonts/Inter/static/Inter_18pt-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Caramel";
+    src: url(fonts/Caramel/Caramel-Regular.ttf);
+}
+
+html {
+    font-size: 110%;
+}
+
+body {
+    font-family: Inter, "Helvetica Neue", "Segoe UI", Roboto, Helvetica, sans-serif;
+    background-color: #221a15;
+    color: #dcdcc8;
+    max-width: 1440px;
+    margin: 0 auto;
+}
+
+section {
+    padding: 1rem;
+}
+
+aside {
+    max-width: 50rem;
+    margin: 2rem auto;
+    width: 70%;
+    padding: 1.5rem;
+    border: 2px dashed #dcdcc8;
+    text-align: justify;
+}
+
+h1 {
+    font-size: 4.75rem;
+    font-family: Caramel, Georgia, serif;
+    padding: 0 4rem 0 1rem ;
+}
+
+h2, h3, th {
+    font-family: "Bodoni Moda", Didot, "Didot LT STD", Georgia, serif;
+    color: #f9890e;
+}
+
+h2 {
+    font-size: 3rem;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+p {
+    line-height: 1.1;
+    margin: 1rem 0;
+}
+
+table {
+    max-width: 65rem;
+    width: 100%;
+    margin: 0 auto 5rem;
+    padding: 5rem;
+
+}
+
+tbody tr {
+    border-top: 0.5px solid #dcdcc8;
+    padding: 0.5rem;
+}
+
+th, td {
+    padding: 0.7rem;
+    vertical-align: middle;
+    text-align: center;
+}
+
+th {
+    font-size: 1.3rem;
+}
+
+p a {
+    color: #f9890e;
+}
+
+p a:hover, p a:focus {
+    text-decoration: underline;
+}
+
+table a:hover, table a:focus {
+    color: #f9890e;
+    text-decoration: underline;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+/* Header and navigation */
+
+body>header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: end;
+    margin-top: 1rem;
+    border-bottom: 1px solid #dcdcc8;
+}
+
+nav ul {
+    justify-self: end;
+    max-width: 25rem;
+    width: 100%;
+    padding: 0 2.5rem 0.8rem 0rem;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Bodoni Moda", Didot, "Didot LT STD", Georgia, serif;
+    font-size: 1.1rem;
+}
+
+nav a:hover, nav :focus {
+    color: #fff;
+}
+
+nav .active {
+    color: #f9890e;
+}
+
+/* Buttons */
+
+button.save {
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1rem;
+}
+
+button.save::before {
+    font-family: "Font Awesome 6 Free";
+    font-size: 1.5rem;
+    font-weight: 400;
+    content: "\f004";
+}
+
+button.save.saved::before {
+    font-weight: 900;
+}
+
+button.save:hover::before { /* Not :focus because the button stays in focus after click which does not look good */
+    color: #f9890e;
+}
+
+button.new-recipe {
+    display: block;
+    margin: 0 auto;
+    width: 10rem;
+    height: 3rem;
+    background-color: #221a15;
+    color: #f9890e;
+    border: 2px #f9890e solid;
+    border-radius: 15px;
+    font-size: 1.3rem;
+    font-weight: 900;
+}
+
+button.new-recipe:hover { /* Not :focus because the button stays in focus after click which does not look good */
+    color: #dcdcc8;
+    border-color: #dcdcc8;
+}
+
+/* Home page */
+
+a.recipe-link {
+    display: block;
+    width: max-content;
+    margin: 0 auto;
+    transition: scale 0.2s;
+}
+
+a.recipe-link:hover, a.recipe-link:focus {
+    scale: 102%;
+}
+
+.recipe-card {
+    width: 42rem;
+    height: 21rem;
+    margin: 1.5rem auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 8rem 2.5rem 1fr;
+    column-gap: 0.8rem;
+    position: relative;
+}
+
+.recipe-card h2 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    padding: 0;
+    font-size: 2.3rem;
+    line-height: 1.11;
+    overflow: hidden;
+}
+
+.recipe-card ul {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    display: flex;
+    justify-content: space-around;
+    align-items: end;
+    padding-bottom: 0.7rem;
+}
+
+.recipe-card p {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    line-height: 1.3;
+    overflow: hidden;
+    padding-top: 0.1rem;
+    text-align: justify;
+    margin: 0;
+}
+
+.recipe-card img {
+    grid-column: 2/3;
+    grid-row: 1/4;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    display: block;
+}
+
+.recipe-card button.save {
+    width: 4rem;
+    height: 4rem;
+    background-color: #dcdcc8b0;
+    color: #221a15;
+    border: none;
+}
+
+.recipe-card button.save::before {
+    display: block;
+}
+
+.recipe-card button.save:hover { /* Not :focus because the button stays in focus after click which does not look good */
+    color: #f9890e;
+}
+
+form.filter {
+    margin: 1rem;
+    display: flex;
+    justify-content: center;
+    accent-color: #f9890e;
+}
+
+form.filter ul {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+/* Detailed recipe page */
+
+main.detailed-recipe {
+    position: relative;
+}
+
+.detailed-recipe header {
+    max-width: 50rem;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.detailed-recipe h2 {
+    padding-top: 3.5rem; 
+}
+
+.detailed-recipe header ul {
+    display: flex;
+    justify-content: center;
+}
+
+.detailed-recipe header ul li {
+    padding: 1rem;
+}
+
+.detailed-recipe header img {
+    margin: 1rem;
+    max-height: 20rem;
+    max-width: 75vw;
+    height: auto;
+    width: auto;
+}
+
+.detailed-recipe button.save {
+    width: 11rem;
+    height: 3rem;
+    background-color: #221a15;
+    border-style: none none solid solid;
+    border-width: 1px;
+    border-color: #dcdcc8;
+    color: #dcdcc8;
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+.detailed-recipe button.save:hover { /* Not :focus because the button stays in focus after click which does not look good */
+    color: #f9890e;
+    border-color: #f9890e;
+}
+
+.detailed-recipe>section {
+    max-width: 60rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    justify-content: center;
+}
+
+.ingredients {
+    flex: 0 0 auto;
+    max-width: 30rem;
+    padding-left: 1.5rem;
+}
+
+.instructions {
+    flex: 1 1 auto;
+    max-width: 40rem;
+}
+
+.detailed-recipe section ul {
+    list-style: square;
+}
+
+.detailed-recipe section ul li::first-letter {
+    text-transform: uppercase;
+}
+
+.detailed-recipe section ol {
+    list-style: decimal;
+}
+
+.detailed-recipe section li {
+    padding: 0.4rem;
+}
+
+p.servings {
+    list-style-type: none;
+    color: #f9890e;
+    font-family: "Bodoni Moda", Didot, "Didot LT STD", Georgia, serif;
+    font-size: 1.4rem;
+    margin: 0.5rem 0;
+}
+
+/* Saved recipes */
+
+.saved-recipes button.save {
+    position: static;
+    background-color: transparent;
+    color: #dcdcc8;
+    border: none;
+    width: fit-content;
+    height: fit-content;
+}
+
+th#name {
+    text-align: left;
+}
+
+td[headers="name"] {
+    text-align: left;
+}
+
+table .time-info, table .ingredients-info, table .rating-info {
+    display: inline-block;
+    text-align: left;
+}
+
+table .time-info {
+    width: 5rem;
+}
+
+table .ingredients-info {
+    width: 3rem;
+}
+
+table .rating-info {
+    width: 4rem;
+}
+
+/* Contact */
+
+.contact p {
+    text-align: center;
+    margin: 1rem;
+}
+
+.contact form {
+    max-width: 35rem;
+    background-color: #dcdcc816;
+    margin: 3rem auto;
+    padding: 2rem;
+    border: 1px solid #dcdcc8;
+    border-radius: 15px;
+    width: 75%;
+    box-sizing: border-box;
+}
+
+.contact input, .contact select, .contact textarea {
+    width: 100%;
+    background-color: #dcdcc8;
+    border: 1px solid #dcdcc8;
+    border-radius: 7px;
+    box-sizing: border-box;
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    color: #221a15;
+    font-family: Inter, "Helvetica Neue", "Segoe UI", Roboto, Helvetica, sans-serif;
+}
+
+.contact textarea {
+    resize: vertical;
+    min-height: 2.5rem;
+}
+
+.contact label {
+    font-size: 1.1rem;
+    position: relative;
+}
+
+.contact label.required::before {
+    content: "*";
+    color: #f9890e;
+    position: absolute;
+    left: -22px;
+    top: 5px;
+}
+
+.contact button[type="submit"] {
+    display: block;
+    justify-self: right;
+    width: 12rem;
+    height: 2.5rem;
+    background-color: #f9890e;
+    color: #221a15;
+    font-size: 1.1rem;
+    border: 0px solid;
+    border-radius: 7px;
+    margin-top: 1rem;
+    transition: scale 0.1s;
+}
+
+.contact button[type="submit"]::after {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    content: "\f1d8";
+    padding-left: 0.5rem;
+}
+
+.contact button[type="submit"]:hover, button[type="submit"]:focus {
+    scale: 105%;
+}
+
+/* About */
+
+main.about {
+    max-width: 50rem;
+    margin: 0 auto;
+}
+
+.about h2 {
+    padding-bottom: 1rem;
+}
+
+.about img {
+    margin: 1rem 0;
+    width: 100%;
+    height: 20rem;
+    object-fit: cover;
+    object-position: center 20%;
+}
+
+.about p {
+    text-align: justify;
+}
+
+/* Information list icons */
+
+.time-info::before, .ingredients-info::before, .rating-info::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    padding-right: 0.4rem;
+}
+
+.time-info::before {
+    content: "\f017";
+}
+
+.ingredients-info::before {
+    content: "\f787";
+}
+
+.rating-info::before {
+    content: "\f005";
+}
+
+@media(min-width: 1025px) {
+    body>header {
+        margin-top: 0;
+    }
+
+    h1 {
+        font-size: 7.5rem;
+    }
+
+    nav ul {
+        padding-bottom: 1.25rem;
+    }
+}
+
+@media(max-width: 768px) {
+    body>header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 0;
+    }
+
+    h1 {
+        padding: 0 1rem;
+    }
+
+    nav ul {
+        padding: 1rem 0;
+    }
+
+    nav ul li {
+        padding: 0 0.5rem;
+    }
+
+    aside h3 {
+        text-align: center;
+    }
+
+    .recipe-card {
+        width: 21rem;
+        height: 21rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .recipe-card h2 {
+        height: 8rem;
+    }
+
+    .recipe-card img {
+        height: 11rem;
+    }
+
+    .recipe-card p {
+        display: none;
+    }
+
+    .recipe-card button.save {
+        top: unset;
+        bottom: 0;
+    }
+
+    .detailed-recipe button.save {
+        position: static;
+        margin: 1.5rem;
+        border-style: solid;
+    }
+
+    .detailed-recipe h2 {
+        padding: 0;
+    }
+
+    .detailed-recipe>section {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ingredients, .instructions {
+        padding: 0 1rem 0 2.5rem;
+    }
+    
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    tbody tr {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    td {
+        display: block;
+        box-sizing: border-box;
+        position: relative;
+        padding: 0.3rem;
+    }
+
+    td[headers="unsave"] {
+        display: inline-block;
+        position: absolute;
+        left: 1rem;
+        width: 3rem;
+    }
+
+    td[headers="name"] {
+        display: inline-block;
+        text-align: center;
+        width: calc(100% - 6rem);
+    }
+
+    td[headers="time"], td[headers="ingredients"], td[headers="rating"] {
+        width: 60%;
+        text-align: right;
+        position: relative;
+    }
+
+    td[headers="time"]::before, td[headers="ingredients"]::before, td[headers="rating"]::before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+    }
+
+    td[headers="time"]::before {
+        content: "Time";
+    }
+
+    td[headers="ingredients"]::before {
+        content: "Ingredients";
+    }
+
+    td[headers="rating"]::before {
+        content: "Rating";
+    }
+
+    table .time-info::before, table .ingredients-info::before, table .rating-info::before {
+        content: "";
+    }
+
+    table .time-info::after, table .ingredients-info::after, table .rating-info::after {
+        font-family: "Font Awesome 6 Free";
+        font-weight: 900;
+    }
+
+    table .time-info::after {
+        content: " \f017";
+    }
+
+    table .ingredients-info::after {
+        content: " \f787";
+    }
+
+    table .rating-info::after {
+        content: " \f005";
+    }
+}
+
+@media(max-width: 425px) {
+    h1 {
+        text-align: center;
+        line-height: 0.75;
+    }
+
+    .recipe-card {
+        width: 16rem;
+        height: 21rem;
+    }
+
+    .recipe-card h2 {
+        height: 10.5rem;
+    }
+
+    .recipe-card ul {
+        display: none;
+    }
+
+    .recipe-card img {
+        height: 10.3rem;
+    }
+
+    form.filter ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .detailed-recipe header ul {
+        flex-direction: column;
+        padding: 0.5rem;
+    }
+
+    .detailed-recipe header ul li {
+        padding: 0.3rem;
+    }
+
+    td[headers="time"], td[headers="ingredients"], td[headers="rating"] {
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    td[headers="time"]::before, td[headers="ingredients"]::before, td[headers="rating"]::before {
+        content: "";
+    }
+
+    table .time-info, table .ingredients-info, table .rating-info {
+        display: inline;
+        width: auto;
+    }
+
+    table .time-info::after, table .ingredients-info::after, table .rating-info::after {
+        content: "";
+    }
+
+    table .time-info::before, table .ingredients-info::before, table .rating-info::before {
+        font-family: Inter, "Helvetica Neue", "Segoe UI", Roboto, Helvetica, sans-serif;
+    }
+
+    table .time-info::before {
+        content: "Time:";
+    }
+
+    table .ingredients-info::before {
+        content: "Ingredients:";
+    }
+
+    table .rating-info::before {
+        content: "Rating:";
+    }
+
+    .contact form {
+        width: 100%;
+        border-style: solid none;
+        border-radius: 0px;
+        margin-bottom: 0;
+    }
+
+    button[type="submit"] {
+        justify-self: center;
+    }
+
+    .about img {
+        height: 12rem;
+    }
+}
