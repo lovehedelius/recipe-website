@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="On the start page of Thought For Food users who need cooking inspiration
+        can click a button to get random recipes.">
+        <link href="css/reset.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <script src="js/index.js" type="module"></script>
+        <title>Thought For Food</title>
+    </head>
+
+    <body>
+        <header>
+            <h1><a href="index.html">Thought For Food</a></h1>
+            <nav>
+                <ul>
+                    <li class="active"><a href="index.html">Random</a></li>
+                    <li><a href="html/saved.html">Saved</a></li>
+                    <li><a href="html/contact.html">Contact</a></li>
+                    <li><a href="html/about.html">About</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <a href="html/recipe.html" class="recipe-link hidden">
+                <article class="recipe-card">
+                    <h2>No Recipe</h2>
+                </article>
+            </a>
+
+            <button class="new-recipe">New Recipe</button>
+
+            <form class="filter">
+                <ul>
+                    <li><label><input type="radio" name="filter" value="all" checked> All recipes</label></li>
+                    <li><label><input type="radio" name="filter" value="vegetarian"> Vegetarian</label></li>
+                    <li><label><input type="radio" name="filter" value="vegan"> Vegan</label></li>
+                </ul>
+            </form>
+        </main> 
+    </body>
+
+</html>
